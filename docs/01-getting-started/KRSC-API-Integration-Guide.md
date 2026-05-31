@@ -1,42 +1,35 @@
-# KRSC API Integration Guide
+# KRSC API 集成指南
 
 > 来源: [Shopee Open Platform](https://open.shopee.com/developer-guide/29)
 > 分类: Getting Started
 
-## 1. What is KRSC
+## 1. 什么是 KRSC
+
+KRSC 的全称是韩国卖家中心 (Korean Seller Center)。它是面向韩国跨境卖家的卖家中心。卖家可以通过它管理多个店铺的产品、订单和营销。有关 KRSC 的基本操作指南和介绍，请点击此处。
+
+重要提示：升级到 KRSC 的 KRCB 卖家和 KRCB 店铺的管理 ERP 开发者 (ISV) 需要注意，产品 API 需要替换其他 API。您需要开发的 API 包括全球产品 API (Global Product API) 和商家 API (Merchant API)。并确保您已使用 V2.0 店铺授权。
+
+如果未集成 KRSC API - 全球产品 API 和商家 API，升级到 KRSC 的店铺将无法通过 API 调用产品列表相关模块。
+
+FAQ：
 
 
-The full name of KRSC is the Korean Seller Center. It is a seller center for Korean cross-border sellers. Sellers can manage the products, orders, and marketing of multiple shops through it. For the basic operation guide and introduction of KRSC, please click <u>here</u>.
+Q：如何判断一个店铺是否已升级到 KRSC？
 
 
-
-Important: KRCB Sellers and KRCB shops managing ERP developers (ISVs) need to pay attention who upgrade to KRSC need to pay attention that the product API needs to replace other APIs. The APIs you need to be developed include <u>Global Product API</u> and <u>Merchant API</u>. And make sure that you have used V2.0 shop authorization.
-
-
-If KRSC API - Global Product API and Merchant APIs are not integrated, KRSC upgraded shops cannot use API calls for Product listing related modules.
+A：您可以查询 v2.shop.get_shop_info API，如果 API 返回参数 merchant_id，然后查询 v2.merchant.get_merchant_info，merchant_region=KR，则表示该店铺已升级到 KRSC。
 
 
-
-FAQ:
-
-
-Q:How to judge whether a shop has been upgraded to KRSC?
+Q：如果我的系统没有产品相关功能，即不包含产品创建和产品更新功能，是否需要做一些调整？
 
 
-A:You can query the v2.shop.get_shop_info API and the api returns the parameter merchant_id, then query the v2.merchant.get_merchant_info,  merchant_region=KR, which means that the shop has been upgraded to KRSC.
+A：不需要，例如订单相关 API，API 调用流程没有变化。
+
+## 2. 如何集成 KRSC API
+### 2.1 注册成为开发者（如果您已有开发者账户，可跳过此步骤）
 
 
-
-Q:If my system does not have product-related functions, that is, it does not include product creation and product update functions, do I need to connect to do some adjustment?
-
-
-A:No need, such as order-related API, there is no change for api call flow.
-
-## 2. How to integrate KRSC API
-### 2.1 Register as a developer（If you already have a developer account, you can skip this step）
-
-
-a. Click "Sign up" and read "Agreement", and register a Shopee Open Platform account by email. <u>https://open.shopee.com/</u>
+a. 点击 "Sign up" 并阅读 "Agreement"，通过电子邮件注册 Shopee 开放平台账户。`https://open.shopee.com/`
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=07DNyyfCiU9Ua3QSELO5rrCrGiGREHeTKPWY%2Fkw7%2FlgAhjfyQ4qbef0gTUCzmSJAUzOph5HMQ%2B5lz73IOs%2BZWQ%3D%3D&image_type=png)
@@ -45,85 +38,78 @@ a. Click "Sign up" and read "Agreement", and register a Shopee Open Platform acc
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=BVs0FCmQ%2B1zwxPsYrUatW6Pjzm5QEIdLUNMuB%2B2DPPjBEqyMNuLz4wZAFFvOC5dj3wzkRDJc1Fk43qX5QIdhhg%3D%3D&image_type=png)
 
 
-
-b. You will receive a verification email, please verify your email and set a password.
+b. 您将收到一封验证邮件，请验证您的电子邮件并设置密码。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=BAQ1eWOJR6mWBitGCpYucjrV4Gy32V6Mhrd6zFw4jNpw2SnjMfb2edrYAmqX6bFnmpsrdRTQ7jAFoCgLiNaMZg%3D%3D&image_type=png)
 
 
-
-c. Login with your account.
+c. 使用您的账户登录。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=xkNBehrdYmvsiqY16RwrOvm%2FZYhmJ3Swg4Ev%2BH4kS6BofNHitA3OuUkDmB%2FmO6i47Rw4M5NX60gRPXiIjq4PXA%3D%3D&image_type=png)
 
-### 2.2 Complete account information （If you already have an approved developer account, you can skip this step）
+### 2.2 完善账户信息（如果您已有已获批的开发者账户，可跳过此步骤）
 
 
-a. Please refer to this <u>article</u> to find out what type of developer account you are. Login to Open Platform >> Console >> App List >> Select developer type >> Add
+a. 请参考此文章了解您的开发者账户类型。登录开放平台 >> Console >> App List >> 选择开发者类型 >> 添加
 
 
-*Different types of developers will own different types of apps. For details, please refer to <u>App management</u><u> </u>page.
+*不同类型的开发者将拥有不同类型的应用。详情请参阅 App 管理页面。
 
 
+b. 根据您选择的开发者类型填写相应的资料。信息需要由 Shopee 平台审核。
 
-b. Complete the appropriate profile according to the type of developer you choose. The information needs to be reviewed by the Shopee platform.
-
-### 2.3 Create an app
-
-
-To call Shopee OpenAPI, you need to create an App first. You can create apps after the developer profile is approved.
+### 2.3 创建应用
 
 
-
-**Noted**
-
-
-*Original APP type does not support V2.0 api, If your existing app is Original type, please complete the app upgrade according to this <u>announcement.</u>
+要调用 Shopee OpenAPI，您需要先创建一个应用。开发者资料获批后即可创建应用。
 
 
-*For other types of app types, please check the API permission according to this <u>article</u>.
+**注意**
 
 
-
-If you don't have an app, you can create one through this path
-
-
-**Path：**Open Platform >> <u>Console</u> >> App List >> + Create App >> Fill in the information >> Submit
-
-### 2.4 Go live app
+*原始 APP 类型不支持 V2.0 API，如果您现有的应用是原始类型，请根据此公告完成应用升级。
 
 
-You must make sure your app status is online. Click "Go-Live" to request to use the Live environment API.
+*对于其他类型的应用，请根据此文章检查 API 权限。
 
 
-Open Platform >> <u>Console</u> >> App List >> Select the APP to be launched >> Click Go live >> Fill in the information >> Submit
+如果您没有应用，可以通过以下路径创建
+
+
+**路径：**开放平台 >> Console >> App List >> + Create App >> 填写信息 >> Submit
+
+### 2.4 上线应用
+
+
+您必须确保您的应用状态为在线。点击 "Go-Live" 请求使用生产环境 API。
+
+
+开放平台 >> Console >> App List >> 选择要上线的 APP >> 点击 Go live >> 填写信息 >> Submit
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=1bRneJcp7OTLdjQ82C7VENn4FpvXw2%2FiWNE%2BsGrbXbnENjzi1aGeSXZFjsZhzMiaDL6W%2Fjkc9Ih40BDl6OF3IQ%3D%3D&image_type=png)
 
 
+APP 将在 24 小时后自动完成审核，APP 状态将变为 Online 状态，开发者将获得生产环境的 Live Partner id 和 Partner Key。
 
-APP will automatically complete the review after 24 hours and the APP status will change to the Online status, and the developer will obtain the Live Partner id and Partner Key of the Live environment.
-
-### 2.5 Start API testing
-
-
-a. Until KRSC Sandbox is ready, KRSC Devs can use CNSC Sandbox to test API since the function is similar to KRSC.
+### 2.5 开始 API 测试
 
 
-1) To start testing, you should create a China merchant on <u>Console</u> 
+a. 在 KRSC Sandbox 准备就绪之前，KRSC 开发者可以使用 CNSC Sandbox 测试 API，因为其功能与 KRSC 类似。
+
+
+1) 开始测试前，您应在 Console 上创建一个中国商家
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=ZeLHVtU8WelqVJRdsbQqeuKEbyAhzLKxIPxqn9L5FfRwKNKhatrh1jYdi2NyZx%2FqvCH7qUQhBk9rNDSGsqOu5g%3D%3D&image_type=png)
 
 
+2）登录 `https://seller.test-stable.shopee.cn`。请注意，otp 是 123456。
 
-2）Login <u>https://seller.test-stable.shopee.cn</u>. Please note that otp is 123456.
 
-
-*** Note: Kindly use google translator to translate to English or Korean if needed.*
+***注意：如有需要，请使用谷歌翻译翻译为英语或韩语。*
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=Z%2FuyR1WrCBnGHeY3KSevD%2FZY%2BH2%2FLhsbp1HO%2BzDsq%2B%2B3QK0MP%2BidCH%2FJvp5g%2BY%2F9emVg4GHbCDcYkIjcWZO5tw%3D%3D&image_type=png)
@@ -132,103 +118,91 @@ a. Until KRSC Sandbox is ready, KRSC Devs can use CNSC Sandbox to test API since
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=JvSqNkMgwzqnIzsM4REnYXr%2BCOCMIzw1XejYrJ1NIDDcU%2FJcapOHkEr0BEQY%2FFmyM4prk1EiAz%2B4a6IUtupjYA%3D%3D&image_type=png)
 
 
-3)  Set the currency after login.
+3) 登录后设置货币。
 
 
-*** Note: When testing in the CNSC sandbox, only CNY currency is available. In the actual KRSC (Live environment), the currency options will be USD or KRW.*
+***注意：在 CNSC sandbox 中测试时，仅支持 CNY 货币。在实际的 KRSC（生产环境）中，货币选项为 USD 或 KRW。*
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=8oXXnc6F8lniaGfCFYR7hNaHZyjalfZAEvc6vDRREH%2FVv3Qu7ejFENdvxVvyGo7ndSYuwfdxGhbFCE5gkTe52A%3D%3D&image_type=png)
 
 
-
-4) Set the market rate. If you set the wrong number, we will prompt the correct range of the number as the screenshot shown.
+4) 设置市场汇率。如果您设置的数字错误，系统会提示正确的数字范围，如截图所示。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=fh01dA9MXGyppU17dMjT7YdJc9qG1wR26fgseQwQgIqpM%2FZd7pzgorwcIcIUR34dNq6%2BWEmjqZOqauDatrq5Bg%3D%3D&image_type=png)
 
 
-5) Then, you can set the Interface language in <u>Merchant setting page</u> to English.
+5) 然后，您可以在商家设置页面将界面语言设置为英语。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=6qhJCHNH7nYqIV2wKsFRbMofALZdOYKnFweDBLDYNXz8Cp4QUDgSYiPeOEIdAutZGGXxdyHHL96mrpv4%2BAqcGA%3D%3D&image_type=png)
 
 
-6) Check the <u>Global SKU page</u>. Please finish the setting and click the button “Start to upgrade to Global SKU”
+6) 查看 Global SKU 页面。请完成设置并点击按钮 "Start to upgrade to Global SKU"
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=okLn69TBiWNkRCHNG8OXHY1GUvbCFTFJkgfucjIIEznOD8BU3c3%2FRhr64aNoFptIc1W09SXD8KdYav0QEGigHw%3D%3D&image_type=png)
 
 
-
-
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=xNF2eZI3wGgvOdQTYFxS5WA3OklnuIIha8pBbbxCW%2BvMBkWB5CYycsNUbvaxW41tZNIxCj5I7olFIZSgJD1Qug%3D%3D&image_type=png)
 
 
-
-Then you can start to test open api. More details you can check <u>Sandbox Testing</u> article.
-
+然后您可以开始测试开放 API。更多详情请参阅 Sandbox Testing 文章。
 
 
-b. When the seller logs in to KRSC and completes the upgrade for each shops’ products, <u>v2.shop.get_shop_info</u> will return mtsku_upgraded_status:UPGRADED
+b. 当卖家登录 KRSC 并完成每个店铺的产品升级后，`v2.shop.get_shop_info` 将返回 mtsku_upgraded_status:UPGRADED
 
 
-c.Test <u>Global Product API</u> and <u>Merchant API</u>. You can check the API call flow from <u>here</u>
+c. 测试全局产品 API 和商家 API。您可以从此处查看 API 调用流程
 
-### 2.6 Merchant & Shop Authorization
+### 2.6 商家与店铺授权
 
-Because after the shop account is upgraded to KRSC, multiple shops will belong to merchants, you can learn more about the relationship between Merchant and shop through this <u>FAQ</u>. Therefore, in order for you to call the GlobalProduct API normally, please re-authorize your shops and switch the sub account page when authorizing.
+因为店铺账户升级到 KRSC 后，多个店铺将归属于商家，您可以通过此 FAQ 了解更多关于商家和店铺之间的关系。因此，为了正常调用 GlobalProduct API，请重新授权您的店铺，并在授权时切换到子账户页面。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=3yR0asw1jvtA3%2F9oYcUWNIji3AdXQqe5t14vyZGkRaB9GmdCLhUT4NJEMGmPyyaGVI4Kr2cJZLRLMlFg2EQKBg%3D%3D&image_type=png)
 
 
-Please use your main account for authorization. Sub-accounts cannot finish the authorization. The account format of the main account is  ***.main
+请使用您的主账户进行授权。子账户无法完成授权。主账户的格式为 ***.main
 
 
-
-After the account is successfully logged in, you will see the Authorization page, first check the shop you want to authorize and then check Auth Merchant. If you do not check Auth Merchant, you will not be able to call the relevant Global Product API or to obtain the Merchant information. If some shops are not checked, the product cannot be published to the related shop through the API. So please make sure you check the Merchant and shop that you manage completely.
+账户成功登录后，您将看到授权页面，先勾选您要授权的店铺，然后勾选 Auth Merchant。如果不勾选 Auth Merchant，您将无法调用相关的 Global Product API 或获取商家信息。如果某些店铺未被勾选，则无法通过 API 将产品发布到相关店铺。因此，请确保您勾选了您管理的完整的商家和店铺。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=Tl0U8usumC9hZgPO94%2FG9W5Gs4WGeeCddgO9c31Re0ftxnprH8jSRzVOPCB%2Bw%2F%2B5Tztu9Tnqcpn2JCSCHIucfA%3D%3D&image_type=png)
 
 
-
-After the authorization is successful, the callback address will return the main_account_id instead of shop id. Main_account_id will be used to obtain AccessToken later.
-
+授权成功后，回调地址将返回 main_account_id 而非 shop id。稍后将使用 Main_account_id 获取 AccessToken。
 
 
-Then please refresh the token according to this <u>document</u>
+然后请根据此文档刷新令牌
 
 
-
-Through the GetAccesstoken API, you will get a list of all merchant ids and shop ids that have been successfully authorized at that time.
-
+通过 GetAccesstoken API，您将获得当时已成功授权的所有商家 ID 和店铺 ID 的列表。
 
 
-Note that the tokens for each merchant and each shop are independent and you need to store them separately. When you completing the authorization, the initial refresh token and access token you obtained can be shared by the currently authorized merchant id and shop id, and then you call the RefreshAccessToken API, and different merchant ids or different shop ids will return different refresh tokens and access token, so please keep their tokens separately.
+请注意，每个商家和每个店铺的令牌是独立的，您需要分别存储。当您完成授权时，您获得的初始 refresh token 和 access_token 可以由当前授权的商家 ID 和店铺 ID 共享，然后您调用 RefreshAccessToken API，不同的商家 ID 或不同的店铺 ID 将返回不同的 refresh token 和 access_token，因此请分别保存它们的令牌。
 
 
+如果您想获取商家 ID 和店铺 ID 之间的关系，请调用 get_shop_list_by_merchant API。您可以通过调用 get_merchant_info 获取每个商家的信息，并通过调用 get_shop_info 获取每个店铺的信息。
 
-If you want to obtain the relationship between the merchant id and the shop id, please call the <u>get_shop_list_by_merchant</u> API. You can get each merchant information by calling <u>get_merchant_info</u>, and call <u>get_shop_info</u> to get each shop information.
-
-## 3. Summary
-
-
-1）When you create an app, or use an existing app, please make sure that your app type can call the v2.0 GlobalProduct API.
+## 3. 总结
 
 
-2）The shop needs the seller's re-authorization to provide the seller with KRSC product related API services.
+1）创建应用或使用现有应用时，请确保您的应用类型可以调用 v2.0 GlobalProduct API。
 
 
-3）It is necessary to ensure that the APP status is Online, so that seller users can use the KRSC API in the production environment. Clicking Go Live in the Open Platform <u>Console</u> and submitting the information. APP will automatically be approved after 24 hours.
+2）店铺需要卖家重新授权，以便为卖家提供 KRSC 产品相关 API 服务。
 
 
-4）The seller needs to log in to KRSC and complete the relevant settings before the KRSC product upgrade is successful. Only when the product is successfully upgraded, can the Global Product API be called normally.
+3）必须确保 APP 状态为 Online，以便卖家用户可以在生产环境中使用 KRSC API。在开放平台 Console 中点击 Go Live 并提交信息。APP 将在 24 小时后自动获批。
 
 
-5）You can learn more KRSC API FAQ from here: <u>KRSC API FAQ</u>
+4）卖家需要登录 KRSC 并完成相关设置，KRSC 产品升级才能成功。只有当产品成功升级后，才能正常调用 Global Product API。
 
 
-#### If you have any technical connection problems that are not covered by this document, please contact Shopee Open Platform through the <u>ticket system</u>.
+5）您可以从此处了解更多 KRSC API FAQ：KRSC API FAQ
 
+
+#### 如果本文档未涵盖任何技术连接问题，请通过 ticket 系统联系 Shopee 开放平台。

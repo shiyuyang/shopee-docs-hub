@@ -1,260 +1,225 @@
-# Service Partner Program
+# 服务合作伙伴计划
 
 > 来源: [Shopee Open Platform](https://open.shopee.com/developer-guide/24)
 > 分类: Getting Started
 
-## **About Service Partner Program**
+##**关于服务合作伙伴计划**
 
-The Service Partner Program applies to all Independent Software Vendors (ISVs) with access to the Shopee Open Platform. The program aims to reward ISVs who demonstrate excellence in application security, API activity and commercial achievements. 
+服务合作伙伴计划适用于所有有权访问 Shopee 开放平台的独立软件供应商 (ISV)。该计划旨在奖励在应用安全、API 活动和商业成就方面表现卓越的 ISV。
 
+根据您的表现，您可以在我们的计划排名中达到最高层级，并享受 Shopee 开放平台作为**优质服务合作伙伴 (Premium Service Partner)** 的认可。这反过来可以帮助您在所经营的市场中拓展业务并提升影响力。
 
+但是，请注意，在该计划中注册的 ISV，如果在非商业类别中表现不佳，将受到处罚。
 
-Based on your performance, you can achieve top tiers in our program ranking, and enjoy Shopee Open Platform’s endorsement as a **Premium Service Partner**. This in turn lets you grow your business and presence in the market(s) that you operate in.
+##**资格**
 
-
-
-However, do note that ISVs enrolled in the program who perform poorly in the non-commercial categories will be penalized.
-
-## **Eligibility**
-
-All ISVs who have an Open Platform account will be automatically enrolled in the Service Partner Program unless informed otherwise. You will need to have a **valid Open Platform account by the end of the quarter to be eligible for the upcoming enrollment in the subsequent quarter**.
+所有拥有开放平台账户的 ISV 将自动加入服务合作伙伴计划，除非另有通知。您需要在**季度末拥有一个有效的开放平台账户**，才有资格参与**下一季度**的注册。
 
 
-🔹** For ISVs in Indonesia (ID):** You must complete registration for the program before you can be enrolled. Please register here.
+🔹**对于印度尼西亚 (ID) 的 ISV：**您必须先完成该计划的注册才能加入。请在此处注册。
 
 
-
-The timeline of our Service Partner Program enrollment is as follows:
-
+服务合作伙伴计划的注册时间安排如下：
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=bMHHW6V%2FuAGfmMCeIrLzk7TN5Rlx%2BO2yFuYU87QjinEEezqu5X6gdyUNlLVgv8OIdmDjqcIakhiRMkb8sPz7aw%3D%3D&image_type=png)
 
 
-Results will be finalized on the** last calendar day of every quarter**, and will be announced via email on the **2nd Monday of Month 1 of the new quarter**. 
+结果将在**每季度的最后一个日历日**确定，并将在**新季度第 1 个月的第 2 个星期一**通过电子邮件公布。
 
 
+**只有符合我们的标准、并在至少一个市场获得优质服务合作伙伴资格的 ISV 才会收到包含季度绩效报告的电子邮件。他们还将因其良好表现获得奖励。**
 
-**Only eligible ISVs that meet our criteria, and have qualified as a Premium Service Partner in at least one market will receive an email which includes the quarterly performance report. They will also be awarded for their good performance.**
-
-| **⚠️ Note**ISVs which are not qualified to become a Premium Service Partner for the quarter **will not receive a quarterly performance report**.ISVs are assessed based on performance **in each individual market**, and not on an aggregated basis. Rewards will also be provided only in the markets that have met our criteria. |
+|**⚠️ 注意**未获得该季度优质服务合作伙伴资格的 ISV**将不会收到季度绩效报告**。ISV 根据**每个单独市场**的表现进行评估，而非汇总评估。奖励也将仅在符合我们标准的市场提供。 |
 | --- |
-## **Scoring**
+
+##**评分**
 
 
-You will be scored for the Service Partner Program in these 4 categories:
+您将在以下 4 个类别中获得服务合作伙伴计划的评分：
 
-1. Platform Compliance
-1. Application Security
-1. API Activity
-1. Commercial Performance
+1. 平台合规性 (Platform Compliance)
+1. 应用安全 (Application Security)
+1. API 活动 (API Activity)
+1. 商业表现 (Commercial Performance)
 
 
-ISVs must **fulfill all requirements under the Premium criteria** in the 4 categories to be considered a Premium Service Partner each quarter:
+ISV 必须**满足 4 个类别中优质标准的全部要求**，才能在每个季度被认定为优质服务合作伙伴：
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=wDj3w52mqUkGZG0rnT1HtU4Pi3y%2FENG78vnpSc6lKFvaLL67r97HOB%2FM0rZ4DJJkVDkSZwD0UxxfRGl9QJoayg%3D%3D&image_type=png)
 
 
-* Valid Security documents refer to:
+* 有效的安全文档指：
 
-- Penetration Test reports produced by a CREST Registered Penetration Tester or other equivalent certified penetration tester (case-by-case basis)
+- 由 CREST 注册渗透测试员或其他等效认证渗透测试员（逐案评估）生成的渗透测试报告
 
-** Active users refer to sellers with shops actively using your APP(s) who have had at least 1 order in the quarter of assessment*** Acquired sellers need to be active new users on Shopee Platform to count towards this metric
+**活跃用户指在评估季度内至少有 1 个订单、且积极使用您的 APP 的卖家店铺***新获卖家需要是 Shopee 平台上的活跃新用户，才能计入此指标
 
 
-
-**Note 1: **Commercial performance criteria for different markets are as follows:
+**注 1：不同市场的商业表现标准如下：**
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=aQN7oPTqqJv7Jve3S719UWH%2FDmGuBcTitF2q25bgxqD1tAodQEgGoDjYHzD3xJV%2FBeYx%2BzSPdtx4%2BJpzqHI%2Fag%3D%3D&image_type=png)
 
 
-*Last updated: 2025Q3*
+*最后更新：2025Q3*
 
-| **⚠️ Note****[Important] **Shopee reserves the right to exclude certain ISVs from our Service Partner Program **if they are found to be violating our ****Platform Partner Rules**, such as by engaging in crawling activities.  This is even if they have met the criteria above.Criteria above are also subject to changes as and when Shopee deems it to be necessary. |
+|**⚠️ 注意****[重要]**Shopee 保留将某些 ISV 排除在我们的服务合作伙伴计划之外的权利**，如果发现其违反我们的****平台合作伙伴规则 (Platform Partner Rules)**，例如从事爬虫活动。即使他们已满足上述标准也是如此。上述标准也可能随时根据 Shopee 认为必要的变更进行调整。 |
 | --- |
 
 
-Here’s an example of the quarter’s scoring:
+以下是季度评分示例：
 
 
+示例 1
 
-<u>Example 1</u>
 
-
-**ISV Y **services Singapore (SG), Malaysia (MY), and CB sellers. Its commercial performance for the quarter is as follows: 
+**ISV Y**服务于新加坡 (SG)、马来西亚 (MY) 和跨境卖家。其本季度的商业表现如下：
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=xNguAbn%2B4kLs7Y3no1lb5P3TtPXuYh9nXrj50YnQvbEFndx4eU2k5ff2KCIBcdbYv9BpdqbwP7QjsTHuJoLUTg%3D%3D&image_type=png)
 
 
-For the categories of Application Security and API Activity, ISV Y has: 
+在应用安全和 API 活动类别中，ISV Y 具备：
 
 
-i) Good API performance and activity
+i) 良好的 API 表现和活动
 
 
-ii) **Submitted a valid security document (Security certification by ISO 27001)**iii) Ensured that there are **no overdue vulnerabilities found in their IT infrastructure throughout the quarter**
+ii)**已提交有效的安全文档（ISO 27001 安全认证）**iii) 确保**在整个季度内其 IT 基础设施中无逾期漏洞**
 
 
-
-In this example, **ISV Y only meets the local commercial requirements for the Singapore** market, on top of the Application Security and API Activity requirements to become a Premium Service Partner.
-
+在此示例中，**ISV Y 仅满足新加坡市场的本地商业要求**，再加上应用安全和 API 活动要求，才能成为优质服务合作伙伴。
 
 
-Note that **total commercial performance does not** **count **as it** **is assessed based on performance in **each individual market, and not on an aggregated basis**. 
+请注意，**总商业表现不计入**，因为**评估是基于每个单独市场的表现，而非汇总评估**。
+
+例如，3 个市场的总商业表现（1）900 个活跃用户、（2）9 个新获卖家、（3）3,600 个 ADO 似乎也满足马来西亚市场的要求。然而，由于商业要求是按市场逐一评估的，ISV Y 不符合马来西亚的优质服务合作伙伴资格。
 
 
-
-For example, the total commercial performance of (1) 900 active users, (2) 9 new sellers acquired, and (3) 3,600 ADO across the 3 markets may seem to fulfill the Malaysia market requirement as well. However, as commercial requirements are evaluated on a market-by-market basis, ISV Y is not qualified to be a Premium Service Partner in Malaysia. 
-
+示例 2
 
 
-<u>Example 2</u>
-
-
-**ISV Z **services only CB sellers. It has **5,000 active sellers** and **acquired 100 active sellers in the quarter**. The commercial performance of the ISVs are as follow:
+**ISV Z**仅服务跨境卖家。其**拥有 5,000 个活跃卖家**，并在**该季度新获 100 个活跃卖家**。该 ISV 的商业表现如下：
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=YCTR%2BWSYpEPvT0n2RC6UHhmU1GhfqQS%2FmS99xI4B0kT%2BBKseQpw0jdyoLeHzg%2BzxvmaHrvJWEFPs6g2cEYlVCg%3D%3D&image_type=png)
 
 
-It also has good API performance and activity. However, for the categories of Application Security, ISV Z has:
+其 API 表现和活动也良好。然而，在应用安全类别中，ISV Z 存在以下情况：
 
 
-(i) Yet to** submit any valid security documents **
+(i) 尚未**提交任何有效的安全文档**
 
 
-(ii) Yet to rectify **1 high-risk vulnerability found in their IT infrastructure, after 1 warning or 2 weeks without a response (i.e. overdue vulnerability)** 
+(ii) 尚未修复**在其 IT 基础设施中发现的 1 个高风险漏洞（经过 1 次警告或 2 周未响应，即逾期漏洞）**
 
 
-
-In this example, although **ISV Z has excellent commercial performance, ISV Z will not qualify to be a Premium Service Partner in any market**, and be classified in the “Poor” tier. This is because ISV Z** has poor application security**, which has the potential to cause a data leakage. 
-
+在此示例中，虽然**ISV Z 拥有出色的商业表现，但 ISV Z 将不符合任何市场的优质服务合作伙伴资格**，并被评为"差"等级。这是因为 ISV Z**应用安全状况不佳**，有可能导致数据泄露。
 
 
-Depending on the severity of the vulnerability and non-compliance by ISV Z, Shopee may revoke ISV Z’s Open Platform access to protect Shopee’s user data.
+根据 ISV Z 漏洞和不合规的严重程度，Shopee 可能会撤销 ISV Z 的开放平台访问权限，以保护 Shopee 的用户数据。
 
-## Benefits and penalties
+## 福利与处罚
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=JHiEgTLvLbaKVTcanfti%2FhHomjzHC6Hl7ble3OeqEAT8MRsc4rReo6ahyehzuqmt8ZzGWyhpRKBYqaiM52mNxw%3D%3D&image_type=png)
 
 
-*Last updated: 2025Q3*
+*最后更新：2025Q3*
 
-## Frequently Asked Questions (FAQ)
-### <u>**General**</u>
+## 常见问题 (FAQ)
+###**一般问题**
 
-**1. What is the difference between the Shopee-Certified Enablers Program and Service Partner Program?**
+**1. Shopee 认证赋能商计划 (Shopee-Certified Enablers Program) 和服务合作伙伴计划有什么区别？**
 
 
-The Service Partner Program offered on Open Platform is strictly for ISVs who have access to Shopee Open Platform. Although some enablers also have access to Open Platform, this program focuses on security and commercial performance, instead of operational and engagement performance. 
+开放平台提供的服务合作伙伴计划严格适用于有权访问 Shopee 开放平台的 ISV。虽然一些赋能商也可以访问开放平台，但本计划侧重于安全和商业表现，而非运营和参与表现。
 
-### <u>**Scoring**</u>
+###**评分**
 
-**1. How is “active seller” defined?**
+**1. "活跃卖家"是如何定义的？**
 
 
-An active seller must have made a successful functional API call via your APP in the last 90 days. The seller must also have had at least 1 order in the last 90 days.
+活跃卖家必须在前 90 天内通过您的 APP 成功进行了一次功能性 API 调用。该卖家还必须在前 90 天内至少有 1 个订单。
 
 
+**2. 什么算作成功获取一个新卖家？**
 
-**2. What counts as a successful acquisition of a seller?**
 
+卖家获取仅在以下情况下计入：
+(a) ISV 是将卖家带到 Shopee 平台的主动方，即卖家之前未在 Shopee 平台销售，之后开始使用您提供的服务，**并且** (b) 该卖家是评分 FAQ 1 中定义的活跃卖家。
 
-Acquisition of a seller is only counted if: 
 
+**3. 我需要多久向 Shopee 提交一次有效的安全文档？**
 
-(a) the ISV was the active party in bringing the seller onto the Shopee platform, i.e. seller must not have been selling on Shopee platform and then started using services provided by you afterwards, **and **(b) the seller is an active seller as defined above in Scoring FAQ 1.
 
+**渗透测试报告**：您需要**每年**提交一次有效的渗透测试报告。如果您的 **IT 资产发生重大变更**，应提交新的渗透测试报告以反映这些变更。
 
+**安全认证**：这些仅需在**有效期内提交一次**。认证**到期或续期**后，您需要**重新提交**。
 
-**3. How often am I required to submit a valid Security Document to Shopee?**
 
+**4. Shopee 如何知道我们的系统中是否存在漏洞？**
 
-**Penetration Test Reports**: You are required to submit a valid penetration test report **once every year**. If there are** significant changes to your IT assets**, a new penetration test report should be submitted to reflect those changes.
 
+Shopee 会定期对您在开放平台 Console 上申报的 IT 资产进行漏洞扫描。如果您未申报您的 IT 资产，Shopee 将无法评估您的 IT 安全，届时您将被视为**未满足**应用安全要求。Shopee 强烈建议您定期申报和更新您的 IT 资产，以满足应用安全要求并为您的业务争取营销福利。
 
-**Security Certifications**: These only need to be submitted **once during their validity period**. You must **resubmit** the certification **once it expires** or is renewed.
 
+**5. 什么被认为是未修复的漏洞？**
 
 
-**4. How does Shopee know if we have vulnerabilities in our system?**
+如果您未在季度内按规定时间完成 Shopee 建议的修复，则该漏洞被视为未修复。为避免此情况，请定期访问开放平台漏洞控制面板，并尽快执行建议的操作。
 
 
-Shopee performs regular vulnerability screening on the IT assets that you declare on your <u>Open Platform Console</u>. If you do not declare your IT assets, Shopee cannot assess your IT security, and you will be considered to have **not met** the Application Security requirements. Shopee strongly recommends that you declare and update your IT assets regularly, to meet the Application Security requirements and secure marketing benefits for your business. 
+**6. 能否提供一些有效安全文档的示例？**
 
 
+您可以在此处查看 Shopee 可接受的安全文档列表。如果您认为安全文档的详细部分包含敏感信息，可以将其编辑，但文档应仍能显示您 IT 基础设施的漏洞、评级和修复状态。
 
-**5. What is considered an unrectified vulnerability?**
+报告中不应存在未修复的严重或高风险漏洞。
 
+###**福利与处罚**
 
-A vulnerability is only considered unrectified if you do not complete the recommended rectification from Shopee by the allocated time in the quarter. To avoid this, please regularly visit the Open Platform <u>Vulnerability Dashboard</u> , and perform the recommended actions ASAP.
+**1. 除了在 Shopee 卖家平台上的曝光外，如何了解更多关于特定市场的营销福利？**
 
 
+您可以通过联系您的客户经理 (RM) 来了解特定市场的营销福利。您也可以通过我们的 Shopee Ticket System 提交 ticket。
 
-**6. Can you provide some examples of a valid Security Document?**
 
+**2. 如果我在季度中期达到标准，是否会立即成为优质服务合作伙伴？**
 
-You may refer to the file <u>here</u> for a list of acceptable Security Document that Shopee accepts. You can redact detailed portions of the security documents if you believe that they are sensitive information, but it should still show the vulnerability, rating and remediation status of your IT infrastructure. 
 
+不会，您只能在下个季度成为优质服务合作伙伴，因为您的表现是按季度计算的。
 
 
-No open critical or high vulnerabilities should also exist in your report.
+**3. 每次筛选的评估期是多久？**
 
-### <u>**Benefits and Penalties**</u>
 
+筛选将基于您在每个季度的首日至末日的表现。
 
-**1. Other than exposure on Shopee’s seller platforms, how do I find out more about market-specific marketing benefits?**
+例如，2022 年 Q2 的筛选将评估 ISV 从 2022 年 4 月 1 日到 2022 年 6 月 30 日的表现。
 
+###**其他问题**
 
-You can find out about market-specific marketing benefits by reaching out to your Relationship Managers (RMs). You may also raise a ticket via our <u>Shopee Ticket System</u>.
+**1. 我应该联系谁以获取更多有关奖励的信息？**
 
 
+如有任何疑问，您可以联系您的客户经理 (RM) 或当地产品支持团队。如果您符合该计划的条件，您将在发送给您的电子邮件中找到此详细信息。您也可以通过我们的 Shopee Ticket System 提交 ticket。
 
-**2. If I meet the criteria in the middle of a quarter, will I immediately become a Premium Service Partner?**
 
+**2. 为什么我没有被纳为优质服务合作伙伴，或者即使我同时满足了商业和安全表现类别的标准却被排除在福利之外？**
 
-No, you will only become a Premium Service Partner in the next quarter as your performance is calculated on a quarterly basis.
 
+请注意，如果我们发现 ISV 违反我们的平台合作伙伴规则，我们保留将其排除在服务合作伙伴计划之外的权利。其他原因可能包括法律问题导致我们无法授予您某些福利。
 
 
-**3. What is the period of assessment for each screening?**
+**3. 如果我在下一季度被退出该计划，我将如何得知？**
 
 
-The screening will be based on your performance from the first to last day of each quarter. 
+如果您在季度第 1 个月的第 2 个星期一之前未收到电子邮件确认，则可以假定您不再是优质服务合作伙伴。您也将不会收到任何奖励。
 
 
-For example, a screening for 2022 Q2 will assess the ISV’s performance from 1 April 2022 to 30 June 2022. 
+**4. 我们何时会收到奖励，奖励持续多久？**
 
-### <u>**Miscellaneous**</u>
 
-**1. Who should I contact for more information about the rewards?**
-
-
-You may reach out to your Relationship Manager (RM) or your local Product Support team if you have any questions. You will be able to find this detail in the email sent to you if you are eligible for the program. You may also raise a ticket via our <u>Shopee Ticket System</u>.
-
-
-
-**2. Why am I not onboarded as a Premium Service Partner, or excluded from receiving benefits even though I have met the criteria for both the commercial and security performance categories?**
-
-
-Please note that we reserve the right to exclude certain ISVs from our Service Partner Program if they are found to be violating our Platform Partner Rules. Other reasons could include legal issues that prohibit us from granting you certain benefits. 
-
-
-
-**3. How will I know if I am subsequently offboarded from the program in the next quarter?**
-
-
-If you do not receive an email confirmation by the 2nd Monday of the 1st month in the quarter, you can assume that you are no longer a Premium Service Partner. You will not be receiving any of the rewards as well.
-
-
-
-**4. When will we receive the rewards and for how long?**
-
-
-Each reward cycle lasts from the date of announcement until the 2nd Monday of the new quarter.
-
-
-
+每个奖励周期从公告日期持续到新季度的第 2 个星期一。

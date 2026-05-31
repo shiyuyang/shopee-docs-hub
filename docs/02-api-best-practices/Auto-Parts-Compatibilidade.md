@@ -1,109 +1,100 @@
-# AUTO PARTS: COMPATIBILIDADE DE AUTOPEÇAS
+# 汽车配件：汽车零部件兼容性
 
 > 来源: [Shopee Open Platform](https://open.shopee.com/developer-guide/378)
 > 分类: API Best Practices
 
 
-A partir do dia 24 de junho de 2024 está disponível na Shopee a feature que permite adicionar compatibilidade entre veículos e produtos de auto peças. Com isso alguns endpoints foram criados e outros tiveram atualizações relacionadas a esse tema.
+自 2024 年 6 月 24 日起，Shopee 推出了允许添加车辆与汽车零部件产品之间兼容性的功能。为此，新增了一些端点，并对其他端点进行了相关更新。
 
-#### **Vantagens no uso da feature de compatibilidade**
+####**使用兼容性功能的优势**
 
-- Sellers poderão configurar itens mais completos, com os dados de veículos compatíveis com seus produtos;
-- Os itens com compatibilidade preenchida irão aparecer em posições de melhor relevância na página de resultados da pesquisa (SRP) do buyer;
-- O buyer terá maior confiabilidade na compra, uma vez que será mais fácil confirmar se um item é de fato compatível com seu veículo.
+- 卖家可以配置更完整的商品，包含与其产品兼容的车辆数据；
+- 填写了兼容性信息的商品将在买家搜索结果页面 (SRP) 中获得更高的展示权重；
+- 买家在购买时将更有信心，因为更容易确认商品是否与其车辆兼容。
+
+考虑到这一情况，如果您的客户（卖家）经营汽车零部件商品，我们强烈建议您在您的平台上实施新的端点。
+
+####**数据结构**
 
 
-Considerando esse cenário, se o seus clientes (os sellers) trabalham com itens de autopeças, recomendamos fortemente que implementem os novos endpoints na plataforma de vocês.
+车辆数据按以下方式存储：
 
-#### **Estrutura dos dados**
-
-
-Os dados dos veículos são armazenados da seguinte forma:
-
-| Parâmetro | Significado | Exemplo |
+| 参数 | 含义 | 示例 |
 | --- | --- | --- |
-| brand_id | O id de uma marca específica. | 5770 |
-| brand_name | O nome da marca relacionada a cada brand_id. | "Chevrolet" |
-| model_id | O id de um modelo específico. | 5905 |
-| model_name | O nome do modelo relacionado ao model_id. | "Chevette" |
-| year_id | O id de cada ano. | 5712 |
-| year_name | O ano relacionado a um dado year_id. | "1979" |
-| version_id | A id de cada versão de um veículo. | 5907 |
-| version_name | O nome da versão associada ao version_id. | "Hatch" |
+| brand_id | 特定品牌的 ID | 5770 |
+| brand_name | 与每个 brand_id 相关的品牌名称 | "Chevrolet" |
+| model_id | 特定车型的 ID | 5905 |
+| model_name | 与 model_id 相关的车型名称 | "Chevette" |
+| year_id | 每个年份的 ID | 5712 |
+| year_name | 与给定 year_id 相关的年份 | "1979" |
+| version_id | 车辆每个版本的 ID | 5907 |
+| version_name | 与 version_id 相关的版本名称 | "Hatch" |
 
+需要强调的是，上述参数遵循以下依赖关系：brand > model > year > version。
 
-Estabelecido isso, é importante reforçar que os parâmetros listados acima seguem a seguinte relação de dependência: brand > model > year > version.
-
-#### **Novos endpoints:**
+####**新增端点：**
 
 
 **v2.product.get_all_vehicle_list**
 
 
-- Como o nome indica, é o endpoint responsável por trazer toda a lista de veículos presente na base de dados da Shopee. Para usá-lo, o parâmetro obrigatório é o tamanho da página (page_size) que pode ser de no máximo 100 itens. Mais detalhes do endpoint você encontra em sua página do API Reference.
-- Exemplo de retorno do endpoint:
+- 顾名思义，此端点负责返回 Shopee 数据库中的完整车辆列表。使用时，必填参数是页面大小 (page_size)，最多为 100 项。有关该端点的更多详细信息，请参阅 API Reference 页面。
+- 端点返回示例：
 
 ```python
-{    "error": "",    "message": "",    "warning": "",    "request_id": "6535ecb33a3f8c6900c8d2b515f3c821",    "response": {        "vehicle_list": [            {                "brand_id": 5770,                "brand_name": "Chevrolet",                "model_id": 5905,                "model_name": "Chevette",                "year_id": 5712,                "year_name": "1979",                "version_id": 5907,                "version_name": "Hatch"            },            {                "brand_id": 5770,                "brand_name": "Chevrolet",                "model_id": 5905,                "model_name": "Chevette",                "year_id": 5712,                "year_name": "1979",                "version_id": 5906,                "version_name": "S"            }....           ],        "has_next_page": true,        "next_offset": 61    }}
+{ "error": "", "message": "", "warning": "", "request_id": "6535ecb33a3f8c6900c8d2b515f3c821", "response": { "vehicle_list": [ { "brand_id": 5770, "brand_name": "Chevrolet", "model_id": 5905, "model_name": "Chevette", "year_id": 5712, "year_name": "1979", "version_id": 5907, "version_name": "Hatch" }, { "brand_id": 5770, "brand_name": "Chevrolet", "model_id": 5905, "model_name": "Chevette", "year_id": 5712, "year_name": "1979", "version_id": 5906, "version_name": "S" }.... ], "has_next_page": true, "next_offset": 61 }}
 ```
-
 
 
 **v2.product.get_vehicle_list_by_compatibility_detail**
 
 
-- Nesse endpoint é possível identificar os detalhes para cada um dos elementos do veículo (marca / modelo / ano / versão). O parâmetro obrigatório é o "compatibility_details" onde você pode especificar que nível de detalhamento deseja ver. Parâmetros opcionais (brand_id / model_id / year_id / version_id) ajudam no refinamento da busca. Mais informações em sua página na API Reference.
-- Exemplos de chamadas no endpoint:
-| **Request** | **Response** |
+- 通过此端点可以识别车辆每个元素（品牌/车型/年份/版本）的详细信息。必填参数是 "compatibility_details"，您可以在此指定所需的详细程度。可选参数 (brand_id / model_id / year_id / version_id) 有助于细化搜索。更多信息请参见其 API Reference 页面。
+- 端点调用示例：
+|**Request**|**Response**|
 | --- | --- |
-| **compatibility_details**="Brand" | "response": {                "compatibility_tree": [                    {                       "compatibility_details": [                            {                                 "brand_id": 12345,                                 "brand_name": "Toyota",                            },                            {                                 "brand_id": 13524,                                 "brand_name": "Renault",                            },                            {                                "brand_id": 14235,                                "brand_name": "Chevrolet",                            }, … |
-| **compatibility_brand_id**=12345&**compatibility_details**="Model" | "response": {               "compatibility_tree": [                   {                  "compatibility_details": [                            {                                 "model_id": 222234,                               "model_name": "Etios",                            },                            {                                "model_id": 234234,                                 "model_name": "Corolla",                            },                            {                                 "model_id": 225243,                                 "model_name": "Bandeirante",                           }, … |
-#### Mudanças em endpoints existentes
+|**compatibility_details**="Brand" | "response": { "compatibility_tree": [ { "compatibility_details": [ { "brand_id": 12345, "brand_name": "Toyota", }, { "brand_id": 13524, "brand_name": "Renault", }, { "brand_id": 14235, "brand_name": "Chevrolet", }, … |
+|**compatibility_brand_id**=12345&**compatibility_details**="Model" | "response": { "compatibility_tree": [ { "compatibility_details": [ { "model_id": 222234, "model_name": "Etios", }, { "model_id": 234234, "model_name": "Corolla", }, { "model_id": 225243, "model_name": "Bandeirante", }, … |
+#### 现有端点的变更
 
 
-Alguns endpoints sofreram ajustes para que possam se adequar ao fluxo de compatibilidade, são eles:
+一些端点已进行调整以适应兼容性流程，具体如下：
 
 - V2.product.add_item;
 - V2.product.update_item;
 - v2.product.get_item_base_info;
 
+在前两个端点中，可以分别为新商品/现有商品插入兼容性信息。第三个端点的变更有助于确认兼容性信息是否正确添加。
 
-Nos dois primeiros endpoints é possível inserir as informações de compatibilidade para itens novos / existentes, respectivamente. No terceiro as mudanças auxiliam a confirmar se as informações de compatibilidade foram adicionadas corretamente.
-
-
-
-Exemplo de estrutura para chamadas no v2.product.add_item e v2.product.update_item
+v2.product.add_item 和 v2.product.update_item 的调用结构示例
 
 
 ```python
-    "compatibility_info": {        "vehicle_info_list": [            {                "brand_id": 5770,                "model_id": 5911,                "year_id": 5590,                "version_id": 5912            },            {                "brand_id": 5508,                "model_id": 5509,                "year_id": 5516            },            {                "brand_id": 5770,                "model_id": 5905            }        ]    },
+ "compatibility_info": { "vehicle_info_list": [ { "brand_id": 5770, "model_id": 5911, "year_id": 5590, "version_id": 5912 }, { "brand_id": 5508, "model_id": 5509, "year_id": 5516 }, { "brand_id": 5770, "model_id": 5905 } ] },
 ```
 
 
-    
+ 
 
+一些重要注意事项：
 
-
-Algumas considerações importantes:
-
-- Se um determinado produto é compatível com todas as versões de um determinado ano, basta informar os ids para brand, model e year, o sistema entenderá que todas as versões daquele ano deverão ser inseridas na lista de compatibilidade;
+- 如果某个产品与特定年份的所有版本兼容，只需提供 brand、model 和 year 的 ID，系统将自动将该年份的所有版本添加到兼容性列表中；
 
 ```python
-			{                "brand_id": 5508,                "model_id": 5509,                "year_id": 5516            }
+		{ "brand_id": 5508, "model_id": 5509, "year_id": 5516 }
 ```
 
 
-- De maneira similar, se todas as versões de todos os anos de um dado modelo forem compatíveis com o produto, basta informar os ids para brand e model;
+- 类似地，如果某个车型所有年份的所有版本都与产品兼容，只需提供 brand 和 model 的 ID；
 
 ```python
-            {                "brand_id": 5770,                "model_id": 5905            }
+ { "brand_id": 5770, "model_id": 5905 }
 ```
 
 
-- O v2.product.update_item poderá ser usado normalmente para adicionar as informações de compatibilidade em itens existentes que não a possuam. Nesse caso, basta informar a lista de compatibilidade conforme exemplos acima;
+- v2.product.update_item 可正常用于向尚无兼容性信息的现有商品添加兼容性信息。在这种情况下，只需按照上述示例提供兼容性列表即可；
 
-- **ATENÇÃO:** Ao usar o v2.product.update_item **para adicionar compatibilidade em um item que já possui veículos em sua lista**, você deverá informar a lista de ids existente atualmente no item + os novos ids de compatibilidade. Caso contrário, a lista de ids existente será sobreposta pelos novos ids informados na chamada do update item.
+-**注意：**使用 v2.product.update_item**向已在其列表中包含车辆的商品添加兼容性信息时**，您必须提供该商品当前已有的 ID 列表加上新的兼容性 ID。否则，现有的 ID 列表将被 update item 调用中提供的新 ID 覆盖。
 
 
-Se restar alguma dúvida no uso dos novos endpoints, basta abrir um ticket e iremos te auxiliar a integrar corretamente com a nova funcionalidade.
-
+如果对使用新端点有任何疑问，请提交 ticket，我们将协助您正确集成新功能。

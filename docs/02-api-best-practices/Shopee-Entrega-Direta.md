@@ -1,101 +1,95 @@
-# Shopee Entrega Direta
+# Shopee Entrega Direta（Shopee 直接配送）
 
 > 来源: [Shopee Open Platform](https://open.shopee.com/developer-guide/290)
 > 分类: API Best Practices
 
-## What is the Shopee Direct Delivery channel?
+## 什么是 Shopee 直接配送渠道？
 
-- This channel allows (and requires) the seller to make faster deliveries, such as same day or the next day deliveries;
-- The seller is able to deliver their orders on their own or with hired couriers;
-- The delivery time is defined by the cut-off time (defined by the seller) at which the purchase is confirmed (e.g. orders paid before 3pm will be delivered on the same day, orders paid after 3pm will be delivered the next day);
-- The seller will always have 2 channels available when Shopee Entrega Direta is active, as Shopee Entrega Direta currently only serves SP city.
-
-
-*Note: This channel will be made available to selected sellers, in accordance with the rules established by the Shopee commercial team. For more details follow the *<u>*article*</u>*.*
-
-## OpenAPI changes 
-
-1 - Order identification (new logistics channel):
-
-- v2.order.get_order_detail API, "shipping_carrier" parameter: “Shopee Entrega Direta”
+- 此渠道允许（并要求）卖家进行更快速的配送，例如当日达或次日达；
+- 卖家可以自行配送或雇佣快递员配送订单；
+- 配送时间由截单时间（由卖家设定）决定，即购买确认的时间（例如，下午 3 点前支付的订单当日送达，下午 3 点后支付的订单次日送达）；
+- 当 Shopee Entrega Direta 启用时，卖家将始终有 2 个可用渠道，因为 Shopee Entrega Direta 目前仅服务于 SP 城市。
 
 
-2 - Identification of channels available to the seller and creation of items:
+*注意：此渠道将根据 Shopee 商务团队制定的规则，向选定的卖家开放。更多详情请参阅相关**文章**。*
 
-- v2.logistics.get_channel_list, parameter "logistic_channel_id": 90022
+## OpenAPI 变更
 
+1 - 订单识别（新物流渠道）：
 
-3 - Order deadline (ship_by_date):
-
-- As the order delivery deadline is defined by the moment payment is confirmed, it is necessary to ensure that the seller has access to the deadline provided by the  v2.order.get_order_detail API, "ship_by_date" parameter.
-
-
-4 - Item creation:
-
-- This channel will never be the only one available to a seller, so whenever you create an item, when identifying the available channels, always mention all those available (Shopee Direct Delivery and Standard Delivery for example).
-- Attempting to create an item with only one active logistics channel, namely Shopee Direct Delivery, will not be possible;
+- v2.order.get_order_detail API，"shipping_carrier" 参数："Shopee Entrega Direta"
 
 
-## Logistic HUBs
+2 - 卖家可用渠道识别及商品创建：
 
-For partners and logistics HUBs that help sellers manage orders with their logistics channels (e.g. Tracken, Log Manager), below are the main APIs and flows for your Integration:
-
-
-
-1 - Create an account and APP on the Shopee Open Platform:
-
-- To access sellers' APIs and order data, you will need to create an account on the Open Platform.
-- Once the account is created, create an APP (preferably an ERP System type to have access to all OpenAPI functionalities) and connect sellers to their account before starting to call the API;
-- These flows are further detailed in the following articles:
-  - <u>Developer account registration</u>
-  - <u>App management</u>
-  - <u>Authorization and Authentication</u>
+- v2.logistics.get_channel_list，参数 "logistic_channel_id"：90022
 
 
-2 - Recommended APIs and Webhooks (Pushs):
+3 - 订单截止时间 (ship_by_date)：
 
-- v2.order.get_order_list - for identifying orders;
-- v2.order.get_order_detail API - for order details and the only way to check the order's logistics channel (via the “shipping_channel” parameter where “Shopee Entrega Direta” will be returned);
-- v2.logistics.get_tracking_number API - to identify order tracking number;
-- v2.logistics.ceate_shipping_document - for creating labels (it is worth noting that the seller's ERP will already make this call and it may not be necessary);
-- v2.logistics.get_shipping_document_result - to check if the label has already been created successfully and is available for download;
-- v2.logistics.download_shipping_document API - to download the shipping label;
-- order_status_push - to be notified when a new order and when there is any order status update;
-- order_tracking_push - To be notified when the tracking_number has been created;
-- shipping_document_status_push - to be notified when the label is ready for download;
+- 由于订单配送截止时间由付款确认时间决定，因此必须确保卖家能够通过 v2.order.get_order_detail API 的 "ship_by_date" 参数获取截止时间。
 
 
-Below is a link to more articles about order flow on Shopee:
+4 - 商品创建：
 
-- <u>OpenAPI Logistics API Step by Step</u>
-- <u>API Call Flows</u>
-
-## FAQ:
-
-1 - Do all sellers have access to the Shopee Entrega Direta channel?
+- 此渠道永远不会是卖家唯一的可用渠道，因此在创建商品并识别可用渠道时，务必列出所有可用的渠道（例如 Shopee Direct Delivery 和 Standard Delivery）。
+- 尝试仅使用一个活跃的物流渠道（即 Shopee Direct Delivery）创建商品将无法实现；
 
 
-A: Only managed sellers have access to the channel, for more information contact your Account Manager.
+## 物流 HUB
+
+对于帮助卖家管理其物流渠道订单的合作伙伴和物流 HUB（例如 Tracken、Log Manager），以下是集成所需的主要 API 和流程：
 
 
+1 - 在 Shopee 开放平台创建账户和 APP：
 
-2 - Is it mandatory to send an invoice to the Shopee Entrega Direta channel?
-
-
-A: The channel requires sending an invoice, organizing shipping and generating a label normally.
-
-
-
-3 - Masked data in the v2.order.get_order_detail API, why can this happen?
-
-
-A: a) buyer data is sensitive data and is only made available when the order is in READY_TO_SHIP and TO_RETURN status.
+- 要访问卖家的 API 和订单数据，您需要在开放平台创建一个账户。
+- 账户创建后，创建一个 APP（建议选择 ERP System 类型以访问所有 OpenAPI 功能），并在开始调用 API 之前将卖家连接到您的账户；
+- 这些流程在以下文章中有更详细的说明：
+ - 开发者账户注册
+ - App 管理
+ - 授权与认证
 
 
-b) If the IP Whitelist (from the Open Platform Console) is not filled in at the APP level, the data can be masked, once filled in, it should automatically be available (as long as it is in the correct status).
+2 - 推荐的 API 和 Webhook (Push)：
+
+- v2.order.get_order_list - 用于识别订单；
+- v2.order.get_order_detail API - 用于获取订单详情，是查看订单物流渠道的唯一方式（通过 "shipping_channel" 参数，将返回 "Shopee Entrega Direta"）；
+- v2.logistics.get_tracking_number API - 用于识别订单运单号；
+- v2.logistics.ceate_shipping_document - 用于创建面单（注意，卖家的 ERP 可能已经调用此接口，可能无需重复调用）；
+- v2.logistics.get_shipping_document_result - 用于检查面单是否已成功创建并可下载；
+- v2.logistics.download_shipping_document API - 用于下载运单面单；
+- order_status_push - 用于在新订单创建或订单状态更新时接收通知；
+- order_tracking_push - 用于在运单号已创建时接收通知；
+- shipping_document_status_push - 用于在面单准备就绪可供下载时接收通知；
 
 
+以下是关于 Shopee 订单流程的更多文章链接：
+
+- OpenAPI Logistics API Step by Step
+- API Call Flows
+
+## FAQ：
+
+1 - 所有卖家都可以使用 Shopee Entrega Direta 渠道吗？
 
 
-For further questions about OpenAPI, you can raise a ticket on the <u>OP Ticketing Platform.</u>
+A：只有托管卖家可以访问该渠道，更多信息请联系您的客户经理。
 
+
+2 - 使用 Shopee Entrega Direta 渠道是否必须发送发票？
+
+
+A：该渠道要求正常发送发票、安排发货和生成面单。
+
+
+3 - v2.order.get_order_detail API 中的数据脱敏，为什么会发生这种情况？
+
+
+A：a) 买家数据是敏感数据，仅在订单处于 READY_TO_SHIP 和 TO_RETURN 状态时提供。
+
+
+b) 如果在 APP 级别未填写 IP 白名单（来自开放平台 Console），数据可能会被脱敏；填写后，数据将自动可用（前提是处于正确的状态）。
+
+
+有关 OpenAPI 的其他问题，您可以在 OP Ticketing Platform 上提交 ticket。
