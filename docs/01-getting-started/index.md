@@ -17,6 +17,7 @@ title: Shopee Open Platform - 快速入门
 - [KRSC-API-Integration-Guide](KRSC-API-Integration-Guide)
 - [Service-Partner-Program](Service-Partner-Program)
 - [TW-Developer-Audit](TW-Developer-Audit)
+- [index](index)
 - [授权与鉴权](授权与鉴权)
 - [概述](概述)
 - [沙箱测试](沙箱测试)

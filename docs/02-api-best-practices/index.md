@@ -17,6 +17,7 @@ title: Shopee Open Platform - API 最佳实践
 - [Shopee-Entrega-Direta](Shopee-Entrega-Direta)
 - [Shopee-Video-API对接指引](Shopee-Video-API对接指引)
 - [Shopee站内广告接口最佳实践](Shopee站内广告接口最佳实践)
+- [index](index)
 - [价格库存管理](价格库存管理)
 - [创建全球商品](创建全球商品)
 - [创建商品](创建商品)

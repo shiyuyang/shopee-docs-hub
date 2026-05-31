@@ -8,9 +8,9 @@
 
 1. [概述](01-getting-started/概述) — 了解 Shopee Open Platform 是什么
 2. [注册开发者账号](01-getting-started/注册开发者账号)
-3. [App 管理](01-getting-started/App管理)
+3. [App 管理](01-getting-started/App 管理)
 4. [授权与鉴权](01-getting-started/授权与鉴权)
-5. [API 调用](01-getting-started/API调用)
+5. [API 调用](01-getting-started/API 调用)
 6. [API-Call-Flow](01-getting-started/API-Call-Flow) — V2.0 API 调用流程
 7. [Data-Definition](01-getting-started/Data-Definition) — V2.0 数据定义
 8. [沙箱测试](01-getting-started/沙箱测试)
@@ -19,7 +19,7 @@
 
 ### 特定市场/场景
 
-- [CNSC-API 对接用户手册](01-getting-started/CNSC-API对接用户手册) — 跨境卖家
+- [CNSC-API 对接用户手册](01-getting-started/CNSC-API 对接用户手册) — 跨境卖家
 - [KRSC-API-Integration-Guide](01-getting-started/KRSC-API-Integration-Guide) — 韩国市场
 - [TW-Developer-Audit](01-getting-started/TW-Developer-Audit) — 台湾开发者审核
 - [Service-Partner-Program](01-getting-started/Service-Partner-Program)
@@ -42,11 +42,11 @@
 - [退货退款管理](02-api-best-practices/退货退款管理)
 
 ### 营销与推广
-- [Shopee 站内广告接口最佳实践](02-api-best-practices/Shopee站内广告接口最佳实践)
+- [Shopee 站内广告接口最佳实践](02-api-best-practices/Shopee 站内广告接口最佳实践)
 - [直播管理对接指引](02-api-best-practices/直播管理对接指引)
-- [Shopee-AMS 对接指引](02-api-best-practices/Shopee-AMS对接指引)
-- [Shopee-Video-API 对接指引](02-api-best-practices/Shopee-Video-API对接指引)
-- [SIP 最佳实践](02-api-best-practices/SIP最佳实践)
+- [Shopee-AMS 对接指引](02-api-best-practices/Shopee-AMS 对接指引)
+- [Shopee-Video-API 对接指引](02-api-best-practices/Shopee-Video-API 对接指引)
+- [SIP 最佳实践](02-api-best-practices/SIP 最佳实践)
 
 ### 物流方案（巴西市场）
 - [API-de-Cotacao-Logistica-Vendedor](02-api-best-practices/API-de-Cotacao-Logistica-Vendedor)

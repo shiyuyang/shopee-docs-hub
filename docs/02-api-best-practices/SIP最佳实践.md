@@ -34,7 +34,7 @@ SIP 全称为 Shopee International Platform（Shopee 国际平台）。卖家参
 #### 1.1.1 授权流程
 
 
-授权流程同文章授权与鉴权 当卖家登陆 SIP P Shop 的账号进入授权页面点击确认授权后，SIP P Shop 将授权给此 APP。
+授权流程同文章授权与鉴权 当卖家登录 SIP P Shop 的账号进入授权页面点击确认授权后，SIP P Shop 将授权给此 APP。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=wICW%2F2f1YfQskbVUFBJy5gR%2B5iF%2FjUfg2rFw2SvGKPuwFfZ3v0oQ7ZqVofDpl3UbnRlwvoqv%2FOwOaJRMX9RkgQ%3D%3D&image_type=png)
@@ -74,7 +74,7 @@ SIP 全称为 Shopee International Platform（Shopee 国际平台）。卖家参
 #### 1.2.1 授权流程
 
 
-授权流程同授权与鉴权 当卖家登陆 Main account 进入授权页面后，每个 merchant 下的店铺列表中将会对 SIP P Shop 显示“SIP”的标签，点击右侧的“view”将能看到此 P Shop 下所有的 A Shop 信息与授权状态。勾选 SIP P Shop 并点击确认授权给此 APP，则它此时绑定的所有 SIP A Shop 都将自动授权给此 APP。
+授权流程同授权与鉴权 当卖家登录 Main account 进入授权页面后，每个 merchant 下的店铺列表中将会对 SIP P Shop 显示“SIP”的标签，点击右侧的“view”将能看到此 P Shop 下所有的 A Shop 信息与授权状态。勾选 SIP P Shop 并点击确认授权给此 APP，则它此时绑定的所有 SIP A Shop 都将自动授权给此 APP。
 
 
 ![图片](https://open.shopee.com/opservice/api/v1/image/download/?image_id=fON4MRg2jyP7Ska%2B5zTDPdB7n6PN7pkAWV637GaLOIVyn4cdB2EM4ZMiM6jqB%2FE7x0T%2BVB%2BsrXZrh7tUKmiO9Q%3D%3D&image_type=png)
