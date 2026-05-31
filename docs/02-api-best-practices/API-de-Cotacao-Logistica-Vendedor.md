@@ -141,6 +141,7 @@ URL 请求参数：
 | sign | string | e318d3e932719916a9f9ebb57e2011961bd47abfa54a36e040d050d8931596e2 | 基于字符串 "{}{}{}"%(partner_id, api full path, timestamp) 和 partner_key 通过 HMAC-SHA256 算法生成的签名。更多详情：`https://open.shopee.com/documents?module=87&type=2&id=58&version=2` |
 
 
+
 Body 请求参数：
 
 | 名称 | 类型 | 必填 | 示例 | 描述 |
@@ -162,6 +163,7 @@ Body 请求参数：
 | | | weight | int | True | 100 | 重量（克） |
 
 
+
 响应参数 / 报价响应（错误）：
 
 | 名称 | 类型 | 必填 | 示例 | 描述 |
@@ -169,6 +171,7 @@ Body 请求参数：
 | error | string | True | - | 卖家报价的标识符 |
 | message | string | True | - | 买家邮编 |
 | request_id | string | True | - | API 调用的标识符 |
+
 
 
 响应参数 / 报价响应（成功）：
@@ -201,6 +204,7 @@ Body 请求参数：
 | | | shipping_time | int | True | 10 | 订单运输时间（工作日） |
 | | | promise_time | int | True | 30 | 准备时间 + 运输时间的总和 |
 | | | service_code | string | True | M1020 | 标识卖家上下文中的承运商的代码（该代码将返回在 get_order_detail API 的 "shipping_carrier" 参数中，例如："Logistica do Vendedor - M1020"。） |
+
 #### 请求示例
 
 ```curl
@@ -259,6 +263,7 @@ curl --location 'https://api.frete/?partner_id=123456&sign=6b664c45535a544455524
 | 403 | error_height | The height is invalid | False |
 | 403 | error_weight | The weight is invalid | False |
 | 500 | Internal system error | internal system error | True |
+
 
 #### 响应验证（使用 Shopee URL）
 - 为确保响应格式符合预期，我们提供一个用于验证和告知所需更正的 URL。

@@ -25,12 +25,14 @@ title: Shopee Ads 知识库
 | [Homepage Brand Ads（首页品牌广告）](On-Platform-Ads/Homepage-Brand-Ads/) | 6 | Display Ads 横幅创意素材与受众定向 |
 | [Video Ads（视频广告）](On-Platform-Ads/Video-Ads/) | 2 | GMV Max Video 与 Shopee Video Ads |
 
+
 ## Off-Platform Ads（站外广告）
 
 | 分类 | 文章数 | 说明 |
 |------|--------|------|
 | [Facebook Ads](Off-Platform-Ads/Facebook-Ads/) | 4 | Facebook Ads 账户设置、广告活动创建与优化 |
 | [Google Ads](Off-Platform-Ads/Google-Ads/) | 4 | Google Ads 账户设置、广告活动创建与优化 |
+
 
 ---
 ## 翻译说明

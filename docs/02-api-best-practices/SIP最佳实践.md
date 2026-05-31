@@ -121,6 +121,7 @@ SIP 全称为 Shopee International Platform（Shopee 国际平台）。卖家参
 | 商品状态 | P shop 商品被下架或者删除，A shop 商品也会被下架和删除，卖家不能单独操作 A shop 商品的状态。 |
 | 商品库存 | P shop 商品库存等于 A shop 商品库存，例如 P shop 下有2个 A shop, 分别是 A shop1, A shop2, 且 P shop 库存=10，则 A shop1库存=A shop2库存=10。当 A shop1售出1个商品，则库存 P shop=A shop1=A shop2=9。 |
 | 商品价格 | 卖家更新 P shop 商品价格，Shopee 会将同步到 A shop 商品价格。 |
+
 ### 2.2 商品价格逻辑
 #### SIP Item Price
 
@@ -243,6 +244,7 @@ Order Push 会同时推送 P shop 和 A shop 的订单，对于 CB SIP 的卖家
 | sip_subsidy_pri | × | ✓ |
 | pri_currency | × | ✓ |
 | sip_subsidy | × | ✓ |
+
 
 
 ## 5. SIP 接口权限

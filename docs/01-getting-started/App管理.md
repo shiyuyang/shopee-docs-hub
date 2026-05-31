@@ -34,6 +34,7 @@ Shopee 开放平台有以下类型的 App，您可以通过您应用的需要创
 |**Seller In House System**| | ✓ | ✓ | |
 
 
+
 *请注意 Individual Third Party 是我们旧的开发者类型，我们将不再支持，开发者也无法再创建。目前只有 Third-party Partner Platform(ISV) / Registered Business Seller / Individual Seller 三种类型。
 
 
@@ -52,6 +53,7 @@ Shopee 开放平台有以下类型的 App，您可以通过您应用的需要创
 | Marketing | 点击查看 API 列表 |
 | Customer Service | 点击查看 API 列表 |
 | Ads Service | 点击查看 API 列表 |
+
 
 
 注意：
@@ -132,6 +134,7 @@ Shopee 开放平台有以下类型的 App，您可以通过您应用的需要创
 | New App authorizations restricted | App 限制授权中 | 1.无法授权正式环境店铺2.存量授权关系不影响3.可以调用正式环境接口 |
 | API calls restricted | App 限制接口调用中 | 1.无法授权正式环境店铺2.存量授权关系不影响3.不能调用正式环境接口 |
 | Suspended | App 离线中 | 1.无法授权正式环境店铺2.存量授权关系解绑3.不能调用正式环境接口 |
+
 
 
 *平台会检测开发者的行为，如果违反了平台相关政策，我们将可能您的 App 状态更新为 New App authorizations restricted / API calls restricted / Suspended, 当 App 状态被更新时，您将会收到相关邮件通知，您也可以通过控制台看到相关原因。

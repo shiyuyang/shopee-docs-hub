@@ -30,6 +30,7 @@
 | version_id | 车辆每个版本的 ID | 5907 |
 | version_name | 与 version_id 相关的版本名称 | "Hatch" |
 
+
 需要强调的是，上述参数遵循以下依赖关系：brand > model > year > version。
 
 #### **新增端点：**
@@ -55,6 +56,7 @@
 | --- | --- |
 |**compatibility_details**="Brand" | "response": { "compatibility_tree": [ { "compatibility_details": [ { "brand_id": 12345, "brand_name": "Toyota", }, { "brand_id": 13524, "brand_name": "Renault", }, { "brand_id": 14235, "brand_name": "Chevrolet", }, … |
 |**compatibility_brand_id**=12345&**compatibility_details**="Model" | "response": { "compatibility_tree": [ { "compatibility_details": [ { "model_id": 222234, "model_name": "Etios", }, { "model_id": 234234, "model_name": "Corolla", }, { "model_id": 225243, "model_name": "Bandeirante", }, … |
+
 #### 现有端点的变更
 
 

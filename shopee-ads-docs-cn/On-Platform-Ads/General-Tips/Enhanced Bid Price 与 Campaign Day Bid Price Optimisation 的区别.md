@@ -12,4 +12,5 @@
 | 适用范围 | 仅 Product Search Ads | Product Search Ads + Discovery Ads |
 | 是否计入操作上限 | 不计入 | 不计入 |
 
+
 **两者可以同时使用吗？** 可以。两者在不同的层面和时机发挥作用，协同使用可实现更全面的出价优化覆盖。
