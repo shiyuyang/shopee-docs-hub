@@ -232,6 +232,7 @@ curl --location 'https://api.frete/?partner_id=123456&sign=6b664c45535a544455524
 ```
 
 #### 预期返回代码
+
 |**HTTP 状态码**|**Error**|**Message**|**触发应急方案**|
 | --- | --- | --- | --- |
 | 200 | success API call, error Empty | success API call, error Empty | False |

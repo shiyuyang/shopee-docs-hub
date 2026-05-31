@@ -437,17 +437,17 @@
 - PENDING_RESPOND
 - PENDING_BUYER_RESPOND
 - TERMINATED
-##**退货退款请求类型**
+## **退货退款请求类型**
 
 - 0:  正常 RR（买家收到包裹后，根据预计送达日期/配送完成提起的 RR）
 - 1: 运输中 RR（商品仍在运输途中时，买家提起的 RR）
 - 2: 当场退货（买家在配送时拒收包裹后，由配送员提起的 RR）
-##**验证类型**
+## **验证类型**
 
 - seller_validation: 对于退货包裹将送达卖家进行验证和决定（退款买家或提起争议）的退货退款请求
 - warehouse_validation: 对于退货包裹将送达仓库进行验证和决定（退款买家或提起争议）的退货退款请求
-##**逆向物流状态**
-###**【正常退货】**
+## **逆向物流状态**
+### **【正常退货】**
 
 - LOGISTICS_PENDING_ARRANGE: 退货现等待用户选择配送选项。集成物流和非集成物流均适用。
 - LOGISTICS_READY: 用户已选择配送选项，等待系统创建物流请求。运单号尚不可用。集成物流和非集成物流均适用。
@@ -458,19 +458,19 @@
 - LOGISTICS_DELIVERY_FAILED: 包裹配送至卖家失败。仅适用于集成物流，因为此状态由第三方物流提供商回传至 Shopee。
 - LOGISTICS_LOST: 包裹已被标记为丢失。仅适用于集成物流，因为此状态由第三方物流提供商回传至 Shopee。
 - LOGISTICS_DELIVERY_DONE: 包裹已成功送达卖家。仅适用于集成物流，因为此状态由第三方物流提供商回传至 Shopee。
-###**【运输中 RR】**
+### **【运输中 RR】**
 
 - Preparing
 - Delivered  
 - Delivery Failed  
 - Lost
-###**【当场退货】**
+### **【当场退货】**
 
 - Preparing
 - Delivered  
 - Delivery Failed  
 - Lost
-##**退货后物流状态**
+## **退货后物流状态**
 
 
 注意：仅适用于从仓库寄回卖家的退货包裹

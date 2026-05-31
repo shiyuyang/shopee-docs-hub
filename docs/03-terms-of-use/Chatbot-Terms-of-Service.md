@@ -3,7 +3,7 @@
 > 来源: [Shopee Open Platform](https://open.shopee.com/developer-guide/723)
 > 分类: Terms of Use
 
-###**1. 本文档的目的**
+### **1. 本文档的目的**
 
 
 本文档作为使用 Shopee 开放平台 Chatbot 的开发者在不同地区的**集中参考**。
@@ -12,7 +12,7 @@ Shopee 在多个市场运营，Chatbot 功能的使用受**特定地区的 Chatb
 
 开发者在通过 Shopee 开放平台使用 Chatbot 时，有责任理解并遵守适用的地区性 Chatbot 服务条款。
 
-###**2. Shopee Chatbot 服务条款链接**
+### **2. Shopee Chatbot 服务条款链接**
 
 
 请参考以下相应链接，了解适用的 Chatbot 服务条款：
