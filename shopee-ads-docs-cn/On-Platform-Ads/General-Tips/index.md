@@ -14,7 +14,7 @@ title: Shopee Ads - 站内广告 - 通用技巧
 - [Ads Reward Program - 1-1 Free Credit（广告奖励计划）](Ads Reward Program - 1-1 Free Credit（广告奖励计划）)
 - [Ads Safety Community Guideline（广告安全社区准则）](Ads Safety Community Guideline（广告安全社区准则）)
 - [Auto Budget Increase（预算自动追加）](Auto Budget Increase（预算自动追加）)
-- [Auto Top-up (Escrow) 自动充值（托管模式）](Auto Top-up (Escrow) 自动充值（托管模式）)
+- [Auto Top-up（Escrow）自动充值（托管模式）](Auto Top-up（Escrow）自动充值（托管模式）)
 - [Campaign Surge（大促冲刺优化）](Campaign Surge（大促冲刺优化）)
 - [Enhanced Bid Price 与 Campaign Day Bid Price Optimisation 的区别](Enhanced Bid Price 与 Campaign Day Bid Price Optimisation 的区别)
 - [Enhanced Bid Price（增强出价）](Enhanced Bid Price（增强出价）)
@@ -46,4 +46,4 @@ title: Shopee Ads - 站内广告 - 通用技巧
 
 ---
 
-[← 返回上级目录](../../)
+[← 返回上级目录](../../../)
