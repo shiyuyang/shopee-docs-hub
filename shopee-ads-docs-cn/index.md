@@ -5,7 +5,7 @@ title: Shopee Ads 知识库
 
 # Shopee Ads Malaysia - FAQ 文档（中文版）
 
-> **来源：** [https://ads.shopee.com.my/learn/faq/](https://ads.shopee.com.my/learn/faq/)  |  **抓取日期：** 2026-05-31  |  **文章总数：** 76 篇，10 个分类
+> **来源：** [https://ads.shopee.com.my/learn/faq/](https://ads.shopee.com.my/learn/faq/)  |  **抓取日期：** 2026-05-31  |  **文章总数：** 98 篇，12 个分类
 
 本文档库包含 Shopee Ads Malaysia 学习中心的全部 FAQ 文章的中文翻译版本。译文力求信达雅，保留必要专有名词（如 GMV Max、ROAS、Shopee 等）的英文表达。
 
@@ -14,14 +14,16 @@ title: Shopee Ads 知识库
 
 | 分类 | 文章数 | 说明 |
 |------|--------|------|
-| [用户指南](On-Platform-Ads/User-Guide/) | 8 | 平台更新、成长计划和用户指南 |
-| [通用技巧](On-Platform-Ads/General-Tips/) | 29 | 最佳实践、预算管理、出价策略和账户管理 |
+| [用户指南](On-Platform-Ads/User-Guide/) | 10 | 平台更新、成长计划和用户指南 |
+| [通用技巧](On-Platform-Ads/General-Tips/) | 33 | 最佳实践、预算管理、出价策略和账户管理 |
 | [GMV Max](On-Platform-Ads/GMV-Max/) | 14 | GMV Max 自动出价、自定义 ROAS、视频广告和诊断 |
-| [Search Ads（搜索广告）](On-Platform-Ads/Search-Ads/) | 3 | Product Search Ads 创建与优化 |
-| [Shop Ads（店铺广告）](On-Platform-Ads/Shop-Ads/) | 3 | 店铺级广告设置与优化 |
+| [Search Ads（搜索广告）](On-Platform-Ads/Search-Ads/) | 5 | Product Search Ads 创建与优化 |
+| [Shop Ads（店铺广告）](On-Platform-Ads/Shop-Ads/) | 9 | 店铺级广告设置与优化 |
 | [Live Ads（直播广告）](On-Platform-Ads/Live-Ads/) | 5 | 直播广告、GMV Max Live 和 ROAS Target |
 | [Brand Max Ads](On-Platform-Ads/Brand-Max-Ads/) | 2 | Brand Max 介绍与创意素材规范 |
 | [Search Brand Ads（搜索品牌广告）](On-Platform-Ads/Search-Brand-Ads/) | 4 | Search Brand Ads、关键词预订与创意规范 |
+| [Homepage Brand Ads（首页品牌广告）](On-Platform-Ads/Homepage-Brand-Ads/) | 6 | Display Ads 横幅创意素材与受众定向 |
+| [Video Ads（视频广告）](On-Platform-Ads/Video-Ads/) | 2 | GMV Max Video 与 Shopee Video Ads |
 
 ## Off-Platform Ads（站外广告）
 
