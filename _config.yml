@@ -1,6 +1,7 @@
 title: Shopee 开发文档中心
 description: Shopee Open Platform 开发者文档 & Shopee Ads 知识库
 lang: zh-CN
+baseurl: /shopee-docs-hub
 theme: jekyll-theme-cayman
 
 # GitHub Pages settings
